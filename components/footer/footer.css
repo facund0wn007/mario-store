@@ -1,0 +1,120 @@
+.footer {
+    padding: 80px 0;
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.9)),
+        url(/Mario.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff0000, #ff6b6b, #ff0000);
+}
+
+.footer-content {
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-section {
+    color: #F9FAFC;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: #ff0000;
+}
+
+.footer-section p,
+.footer-section h2 {
+    color: #c5c5c5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section h2:hover {
+    color: #ff0000;
+    transform: translateX(5px);
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #F9FAFC;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff0000;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #c5c5c5;
+    font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 30px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

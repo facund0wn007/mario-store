@@ -1,0 +1,213 @@
+.navbarencia{
+    margin-bottom: 80px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.267);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Acomodamos un poco el posicionamiento y agregamos la transition*/
+.navbar li {
+    height: 50px;
+    padding-top: 13px;
+    transition: all 0.3s;
+}
+
+/*Esto es lo que hace que las letras se vuelvan un poco mas grande, si se saca la decoracion de lo rojo se buguea y se tiene que acomodar*/
+.navbar li:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    height: 100%;
+    padding: 0 73px;
+    text-decoration: none;
+    align-items: center;
+    color: #F9FAFC;
+}
+
+/*Aqui nos dedicamos a hacer la animacion que se encuentra bajo las letras de la navbar, tamaño, posicion y transicion*/
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition-duration: .3s;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+/*Acomodamos el boton que abre la side bar en la navbar*/
+.navbar .sidebarbig {
+    height: 100%;
+    padding: 0 73px;
+    text-decoration: none;
+    align-items: center;
+    color: #F9FAFC;
+    margin-top: 9px;
+}
+
+/*De aqui hasta rojo hover, es todo para acomodar las letras de colores tanto de la navbar como la sidebar, ademas dl cambio de color cada que pones el mouse encima*/
+#blanco {
+    color: #F9FAFC;
+    transition: all 0.3s;
+    text-shadow: -1px -1px 10px rgb(230, 221, 221);
+}
+
+#blanco:hover {
+    transform: scale(1.1);
+}
+
+.blanco {
+    color: #F9FAFC;
+    transition: all 0.3s;
+    text-shadow: -1px -1px 10px rgb(230, 221, 221);
+}
+
+.blanco:hover {
+    transform: scale(1.1);
+}
+
+#rojo {
+    color: red;
+    transition: all 0.3s;
+    text-shadow: -1px -1px 10px rgb(221, 6, 6);
+}
+
+#rojo:hover {
+    transform: scale(1.1);
+}
+
+.rojo {
+    color: red;
+    transition: all 0.3s;
+    text-shadow: -1px -1px 10px rgb(221, 6, 6);
+}
+
+.rojo:hover {
+    transform: scale(1.1);
+}
+
+/*Esto permite el acomodar las letras del logo en la navbar (El otto krause)*/
+.logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 5px;
+}
+
+.navbarencia .logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.navbarencia .logo img:hover {
+    transform: scale(1.05);
+}
+
+/*Aqui acomodamos y hacemos la sidebar, basicamente igual a la navbar, agregandole una capa mayor en el z index*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 250vh;
+    background-color: rgba(0, 0, 0, 0.267);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+
+}
+
+.sidebar li {
+    height: 70px;
+    transition: all 0.3s;
+}
+
+.sidebar a {
+    height: 100%;
+    width: 100%;
+    padding: 40px 35px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition-duration: .3s;
+}
+
+.sidebar a:hover::after {
+    transform: scaleX(1);
+}
+
+/*Aqui Personalizaremos el "abrir y cerrar" la sidebar*/
+.sidebarbig {
+    filter: invert(23%) sepia(93%) saturate(6573%) hue-rotate(356deg) brightness(103%) contrast(124%);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.sidebarbig:hover {
+    filter: invert(95%) sepia(45%) saturate(802%) hue-rotate(177deg) brightness(111%) contrast(97%);
+    transform: scale(1.1);
+}
+
+.sidebarbig2 {
+    filter: invert(95%) sepia(45%) saturate(802%) hue-rotate(177deg) brightness(111%) contrast(97%);
+    transition: all 0.3s;
+    margin-top: 40px;
+}
+
+.sidebarbig2:hover {
+    filter: invert(23%) sepia(93%) saturate(6573%) hue-rotate(356deg) brightness(103%) contrast(124%);
+    transform: scale(1.1);
+}
+
+@media(max-width: 1052px) {
+    .hideOnmobile {
+        display: none;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
